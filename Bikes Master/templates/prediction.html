@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/prediction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Bike Rental Prediction | Results</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="result-card">
+            <div class="result-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h1>Prediction Results</h1>
+            </div>
+            
+            <div class="result-content">
+                <p class="prediction-text">Expected bike rentals:</p>
+                <div class="prediction-value">{{ bikes_count }}</div>
+                <p class="prediction-help">This is the estimated number of bikes that will be rented based on your input parameters.</p>
+            </div>
+
+            <a href="{{ url_for('index') }}" class="return-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Make Another Prediction</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
