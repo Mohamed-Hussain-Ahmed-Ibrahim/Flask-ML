@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <link rel='stylesheet' href='static\styles\index.css'/>
+
+    <title>Home Page</title> 
+</head>
+
+
+<body> 
+    <div class='header'>
+        <h1> House Price App</h1>
+        <p> welcome to our application where you can predict profit from bikes rental</p>
+    </div>
+
+    <div> 
+        <form action="/predict" method="POST">
+            <label for="OverallQual">OverallQual</label><br>
+            <input type='number' step="1" id='Qual' name='qual'><br><br>
+
+            <label for="OverallCond">OverallCond</label><br>
+            <input type='number' step="1" id='Cond' name='cond'><br><br>
+
+            <label for="BsmtFinSF1">BsmtFinSF1</label><br>
+            <input type='number' step="1" id='sf1' name='sf1'><br><br>
+
+            <label for="GrLivArea">GrLivArea</label><br>
+            <input type='number' step="1" id='area' name='area'><br><br>
+
+            <label for="Bedroom">BedRoom</label><br>
+            <input type='number' step="1" id='bed' name='bed'><br><br>
+
+            <label for="GarageArea">GarageArea</label><br>
+            <input type='number' step="1" id='garage' name='garage'><br><br>
+
+            <input type="Submit" value="Predict" />
+        </form>
+        
+    </div>
+
+
+</body>
