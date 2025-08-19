@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/prediction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Insurance Estimate Results</title>
+</head>
+
+<body>
+    <div class="health-container">
+        <div class="health-result-card">
+            <div class="result-header">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <h1>Your Insurance Estimate</h1>
+            </div>
+            
+            <div class="result-content">
+                <div class="estimate-value">
+                    <span class="currency">$</span>
+                    <span class="amount">{{ charge }}</span>
+                </div>
+                <p class="result-description">Estimated annual medical insurance charges based on your profile</p>
+            </div>
+
+            <div class="result-actions">
+                <a href="{{ url_for('index') }}" class="health-return-btn">
+                    <i class="fas fa-redo"></i> New Estimate
+                </a>
+                <button class="health-print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Results
+                </button>
+            </div>
+
+            <div class="result-disclaimer">
+                <p><i class="fas fa-exclamation-circle"></i> This is an estimate only. For exact pricing, please contact your insurance provider.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

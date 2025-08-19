@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Insurance Charges Predictor</title>
+</head>
+
+<body>
+    <div class="health-container">
+        <header class="health-header">
+            <div class="health-logo">
+                <i class="fas fa-file-medical-alt"></i>
+                <h1>Insurance Charges Predictor</h1>
+            </div>
+            <p class="health-subtitle">Estimate medical insurance costs based on personal factors</p>
+        </header>
+
+        <main class="health-form-container">
+            <div class="health-card">
+                <form action="/predict" method="POST" class="prediction-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">
+                                <i class="fas fa-birthday-cake"></i> Age
+                            </label>
+                            <input type="number" step="1" id="age" name="age" min="18" max="100" placeholder="Enter age" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bmi">
+                                <i class="fas fa-weight"></i> BMI
+                            </label>
+                            <input type="number" step="0.1" id="bmi" name="bmi" min="15" max="50" placeholder="Enter BMI" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sex">
+                                <i class="fas fa-venus-mars"></i> Gender
+                            </label>
+                            <select id="sex" name="sex" required>
+                                <option value="" disabled selected>Select gender</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="child">
+                                <i class="fas fa-child"></i> Children
+                            </label>
+                            <input type="number" step="1" id="child" name="child" min="0" max="10" placeholder="Number of children" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="smoke">
+                                <i class="fas fa-smoking"></i> Smoker
+                            </label>
+                            <select id="smoke" name="smoke" required>
+                                <option value="" disabled selected>Select smoking status</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="region">
+                                <i class="fas fa-map-marker-alt"></i> Region
+                            </label>
+                            <select id="region" name="region" required>
+                                <option value="" disabled selected>Select region</option>
+                                <option value="southeast">Southeast</option>
+                                <option value="southwest">Southwest</option>
+                                <option value="northwest">Northwest</option>
+                                <option value="northeast">Northeast</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="health-submit-btn">
+                        <i class="fas fa-calculator"></i> Calculate Estimate
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="health-footer">
+            <p>This tool provides estimates only. Actual insurance costs may vary.</p>
+        </footer>
+    </div>
+</body>
+</html>
