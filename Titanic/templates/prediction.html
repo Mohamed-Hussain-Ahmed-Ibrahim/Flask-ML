@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/prediction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Survival Prediction Results</title>
+</head>
+
+<body>
+    <div class="titanic-container">
+        <div class="titanic-result-card">
+            <div class="result-header">
+                {% if surv == 'Survived' %}
+                <i class="fas fa-life-ring" style="color: #4CAF50;"></i>
+                <h1>Prediction: <span class="survived">Survived</span></h1>
+                {% else %}
+                <i class="fas fa-monument" style="color: #f44336;"></i>
+                <h1>Prediction: <span class="not-survived">Did Not Survive</span></h1>
+                {% endif %}
+            </div>
+            
+            <div class="result-content">
+                <p class="result-description">
+                    {% if surv == 'Survived' %}
+                    Based on the provided passenger details, the prediction indicates survival.
+                    {% else %}
+                    Based on the provided passenger details, the prediction indicates the passenger did not survive.
+                    {% endif %}
+                </p>
+                
+                <div class="historical-note">
+                    <i class="fas fa-history"></i>
+                    <p>Remember that this is a statistical prediction based on historical patterns from the 1912 disaster.</p>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <a href="{{ url_for('index') }}" class="titanic-return-btn">
+                    <i class="fas fa-redo"></i> New Prediction
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

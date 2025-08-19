@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Titanic Survival Predictor</title>
+</head>
+
+<body>
+    <div class="titanic-container">
+        <header class="titanic-header">
+            <div class="titanic-logo">
+                <i class="fas fa-ship"></i>
+                <h1>Titanic Survival Predictor</h1>
+            </div>
+            <p class="titanic-subtitle">Discover the likelihood of survival based on passenger details</p>
+        </header>
+
+        <main class="titanic-form-container">
+            <div class="titanic-card">
+                <form action="/predict" method="POST" class="prediction-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">
+                                <i class="fas fa-user"></i> Age
+                            </label>
+                            <input type="number" step="1" id="age" name="age" min="0" max="100" placeholder="Enter age" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fare">
+                                <i class="fas fa-ticket-alt"></i> Fare (£)
+                            </label>
+                            <input type="number" step="0.1" id="fare" name="fare" min="0" placeholder="Enter fare amount" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pclass">
+                                <i class="fas fa-layer-group"></i> Passenger Class
+                            </label>
+                            <select id="pclass" name="pclass" required>
+                                <option value="" disabled selected>Select class</option>
+                                <option value=1>1st Class</option>
+                                <option value=2>2nd Class</option>
+                                <option value=3>3rd Class</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sex">
+                                <i class="fas fa-venus-mars"></i> Gender
+                            </label>
+                            <select id="sex" name="sex" required>
+                                <option value="" disabled selected>Select gender</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sibsp">
+                                <i class="fas fa-user-friends"></i> Siblings/Spouses
+                            </label>
+                            <select id="sibsp" name="sibsp" required>
+                                <option value="" disabled selected>Select number</option>
+                                <option value=0>0</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parch">
+                                <i class="fas fa-child"></i> Parents/Children
+                            </label>
+                            <select id="parch" name="parch" required>
+                                <option value="" disabled selected>Select number</option>
+                                <option value=0>0</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="embark">
+                            <i class="fas fa-anchor"></i> Embarkation Port
+                        </label>
+                        <select id="embark" name="embark" required>
+                            <option value="" disabled selected>Select port</option>
+                            <option value="s">Southampton (S)</option>
+                            <option value="c">Cherbourg (C)</option>
+                            <option value="q">Queenstown (Q)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="titanic-submit-btn">
+                        <i class="fas fa-search"></i> Predict Survival
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="titanic-footer">
+            <p>This predictor is based on historical data from the 1912 Titanic disaster.</p>
+        </footer>
+    </div>
+</body>
+</html>
